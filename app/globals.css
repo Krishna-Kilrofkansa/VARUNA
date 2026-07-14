@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Ocean-themed color palette inspired by design */
+  --background: oklch(0.98 0.01 220);
+  --foreground: oklch(0.15 0.05 220);
+  --card: oklch(0.96 0.02 220);
+  --card-foreground: oklch(0.15 0.05 220);
+  --popover: oklch(0.96 0.02 220);
+  --popover-foreground: oklch(0.15 0.05 220);
+  --primary: oklch(0.35 0.15 220);
+  --primary-foreground: oklch(0.98 0.01 220);
+  --secondary: oklch(0.45 0.12 200);
+  --secondary-foreground: oklch(0.98 0.01 220);
+  --muted: oklch(0.92 0.02 220);
+  --muted-foreground: oklch(0.55 0.05 220);
+  --accent: oklch(0.55 0.18 180);
+  --accent-foreground: oklch(0.98 0.01 220);
+  --destructive: oklch(0.55 0.2 15);
+  --destructive-foreground: oklch(0.98 0.01 220);
+  --border: oklch(0.88 0.02 220);
+  --input: oklch(0.88 0.02 220);
+  --ring: oklch(0.35 0.15 220);
+  --chart-1: oklch(0.55 0.18 180);
+  --chart-2: oklch(0.45 0.12 200);
+  --chart-3: oklch(0.35 0.15 220);
+  --chart-4: oklch(0.65 0.15 160);
+  --chart-5: oklch(0.75 0.12 140);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.96 0.02 220);
+  --sidebar-foreground: oklch(0.15 0.05 220);
+  --sidebar-primary: oklch(0.35 0.15 220);
+  --sidebar-primary-foreground: oklch(0.98 0.01 220);
+  --sidebar-accent: oklch(0.92 0.02 220);
+  --sidebar-accent-foreground: oklch(0.15 0.05 220);
+  --sidebar-border: oklch(0.88 0.02 220);
+  --sidebar-ring: oklch(0.35 0.15 220);
+
+  /* Ocean-specific custom properties */
+  --ocean-deep: oklch(0.25 0.12 240);
+  --ocean-medium: oklch(0.35 0.15 220);
+  --ocean-light: oklch(0.65 0.12 200);
+  --ocean-foam: oklch(0.85 0.05 180);
+  --coral-accent: oklch(0.65 0.18 25);
+  --font-inter: "Inter", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+}
+
+.dark {
+  /* Dark ocean theme */
+  --background: oklch(0.08 0.05 240);
+  --foreground: oklch(0.92 0.02 180);
+  --card: oklch(0.12 0.05 240);
+  --card-foreground: oklch(0.92 0.02 180);
+  --popover: oklch(0.12 0.05 240);
+  --popover-foreground: oklch(0.92 0.02 180);
+  --primary: oklch(0.65 0.15 200);
+  --primary-foreground: oklch(0.08 0.05 240);
+  --secondary: oklch(0.18 0.08 240);
+  --secondary-foreground: oklch(0.92 0.02 180);
+  --muted: oklch(0.18 0.08 240);
+  --muted-foreground: oklch(0.65 0.05 200);
+  --accent: oklch(0.55 0.18 180);
+  --accent-foreground: oklch(0.08 0.05 240);
+  --destructive: oklch(0.55 0.2 15);
+  --destructive-foreground: oklch(0.92 0.02 180);
+  --border: oklch(0.18 0.08 240);
+  --input: oklch(0.18 0.08 240);
+  --ring: oklch(0.65 0.15 200);
+  --chart-1: oklch(0.55 0.18 180);
+  --chart-2: oklch(0.45 0.12 200);
+  --chart-3: oklch(0.65 0.15 200);
+  --chart-4: oklch(0.75 0.15 160);
+  --chart-5: oklch(0.85 0.12 140);
+  --sidebar: oklch(0.12 0.05 240);
+  --sidebar-foreground: oklch(0.92 0.02 180);
+  --sidebar-primary: oklch(0.65 0.15 200);
+  --sidebar-primary-foreground: oklch(0.08 0.05 240);
+  --sidebar-accent: oklch(0.18 0.08 240);
+  --sidebar-accent-foreground: oklch(0.92 0.02 180);
+  --sidebar-border: oklch(0.18 0.08 240);
+  --sidebar-ring: oklch(0.65 0.15 200);
+
+  --ocean-deep: oklch(0.05 0.08 260);
+  --ocean-medium: oklch(0.15 0.12 240);
+  --ocean-light: oklch(0.35 0.15 220);
+  --ocean-foam: oklch(0.65 0.08 200);
+  --coral-accent: oklch(0.75 0.18 25);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Ocean theme utilities */
+  --color-ocean-deep: var(--ocean-deep);
+  --color-ocean-medium: var(--ocean-medium);
+  --color-ocean-light: var(--ocean-light);
+  --color-ocean-foam: var(--ocean-foam);
+  --color-coral-accent: var(--coral-accent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Ocean wave animations */
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px) translateY(-5px) rotate(1deg);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-10px) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(-5px) translateY(-5px) rotate(1deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--color-accent), 0 0 10px var(--color-accent), 0 0 15px var(--color-accent);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent), 0 0 30px var(--color-accent);
+  }
+}
+
+.wave-animation {
+  animation: wave 6s ease-in-out infinite;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.ripple-animation {
+  animation: ripple 2s linear infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Water rippling animation for loading screen */
+@keyframes water-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes water-wave {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.water-ripple {
+  animation: water-ripple 3s ease-out infinite;
+}
+
+.water-wave {
+  animation: water-wave 4s ease-in-out infinite;
+}
